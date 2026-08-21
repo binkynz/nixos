@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+export NIX_CONFIG="experimental-features = nix-command flakes"
+
 REPO="https://github.com/binkynz/nixos.git"
 FLAKE_HOST="desktop"
 DISK="/dev/nvme0n1"

@@ -18,6 +18,19 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  environment.etc."xdg/gtk-3.0/settings.ini".text = ''
+    [Settings]
+    gtk-application-prefer-dark-theme=true
+  '';
+
+  environment.etc."xdg/gtk-4.0/settings.ini".text = ''
+    [Settings]
+    gtk-application-prefer-dark-theme=true
+  '';
+
+  qt.enable = true;
+  qt.style = "adwaita-dark";
+
   hardware.graphics.enable = true;
 
   hardware.bluetooth.enable = true;
