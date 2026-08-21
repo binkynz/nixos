@@ -22,12 +22,5 @@
     passff-host
     git-crypt
     stylua
-    kubectl
-    pgcli
-    mycli
-    google-cloud-sdk
-    google-cloud-sql-proxy
-    google-alloydb-auth-proxy
-    slack
   ];
 }

@@ -25,9 +25,11 @@
         ./disko.nix
         ./hardware-configuration.nix
         ./configuration.nix
+        ./networking.nix
         ./desktop.nix
         ./docker.nix
         ./user.nix
+        ./work.nix
       ];
     };
   };

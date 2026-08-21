@@ -30,6 +30,10 @@
     cmake
     gnumake
     rustup
+    pkg-config
+    openssl.dev
+    zlib.dev
+    zstd.dev
     go
     gopls
     nodejs
@@ -38,28 +42,10 @@
     pyright
   ];
 
-  networking.hostName = "desktop";
-  networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "systemd-resolved";
-  services.resolved.enable = true;
-
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
   i18n.defaultLocale = "en_NZ.UTF-8";
   time.timeZone = "Pacific/Auckland";
 
   nixpkgs.config.allowUnfree = true;
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-    };
-  };
-
-  services.tailscale.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -77,6 +63,17 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  systemd.tmpfiles.rules = [
+    "L+ /usr/bin/mold - - - - ${pkgs.mold}/bin/mold"
+  ];
+
+  environment.variables = {
+    OPENSSL_DIR = "${pkgs.openssl.dev}";
+    OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
+    OPENSSL_INCLUDE_DIR = "${pkgs.openssl.dev}/include";
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.zlib.dev}/lib/pkgconfig";
   };
 
   documentation.man.enable = true;
