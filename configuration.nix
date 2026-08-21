@@ -43,7 +43,7 @@
   ];
 
   i18n.defaultLocale = "en_NZ.UTF-8";
-  time.timeZone = "Pacific/Auckland";
+  time.timeZone = "Europe/London";
 
   nixpkgs.config.allowUnfree = true;
 
