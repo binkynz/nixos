@@ -31,6 +31,16 @@
   qt.enable = true;
   qt.style = "adwaita-dark";
 
+  programs.dconf = {
+    enable = true;
+    profiles.user.databases = [{
+      settings."org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        gtk-theme = "Adwaita-dark";
+      };
+    }];
+  };
+
   hardware.graphics.enable = true;
 
   hardware.bluetooth.enable = true;
@@ -45,9 +55,19 @@
   };
 
   programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-hyprland
+    pkgs.xdg-desktop-portal-gtk
+  ];
+  xdg.portal.config.common = {
+    default = [ "hyprland" "gtk" ];
+    "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
+  };
+
+  services.pipewire.wireplumber.enable = true;
 
   services.displayManager.gdm.enable = true;
 

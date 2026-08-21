@@ -66,7 +66,10 @@
   };
 
   systemd.tmpfiles.rules = [
-    "L+ /usr/bin/mold - - - - ${pkgs.mold}/bin/mold"
+    "L+ /usr/bin/mold  - - - - ${pkgs.mold}/bin/mold"
+    "L+ /usr/bin/bash  - - - - ${pkgs.bash}/bin/bash"
+    "L+ /usr/bin/env   - - - - ${pkgs.coreutils}/bin/env"
+    "L+ /bin/bash      - - - - ${pkgs.bash}/bin/bash"
   ];
 
   environment.variables = {
