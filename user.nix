@@ -11,6 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    google-chrome
     just
     lazygit
     atuin
@@ -23,6 +24,7 @@
     git-crypt
     stylua
     lspmux
+    stremio-linux-shell
   ];
 
   systemd.user.services.lsp-mux = {
