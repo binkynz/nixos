@@ -2,7 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    argocd
     kubectl
+    kustomize-sops
     pgcli
     postgresql
     mycli
