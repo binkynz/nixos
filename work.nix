@@ -48,6 +48,7 @@
         "projects/prod-eu-6396/locations/europe-west3/clusters/data-prod/instances/primary?port=9660"
         "projects/prod-eu-6396/locations/europe-west3/clusters/sellablesdb/instances/sellablesdb-prod?port=9663"
         "projects/partly-staging-au/locations/australia-southeast2/clusters/data-staging/instances/primary?port=9664"
+        "projects/partly-staging-au/locations/australia-southeast2/clusters/sellablesdb/instances/sellablesdb-staging?port=9666"
       ];
     };
   };
@@ -66,7 +67,6 @@
         "--auto-iam-authn"
         "--public-ip"
         "projects/partly-staging-au/locations/australia-southeast2/clusters/platform-staging/instances/primary?port=9665"
-        "projects/partly-staging-au/locations/australia-southeast2/clusters/sellablesdb/instances/sellablesdb-staging?port=9666"
       ];
     };
   };
