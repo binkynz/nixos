@@ -26,6 +26,8 @@
     stylua
     lspmux
     stremio-linux-shell
+    github-copilot-cli
+    codex
   ];
 
   systemd.user.services.lsp-mux = {

@@ -7,6 +7,8 @@
     grim
     slurp
     wl-clipboard
+    wtype
+    libnotify
     mako
     rofi
     waybar

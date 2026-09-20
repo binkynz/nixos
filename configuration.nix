@@ -38,6 +38,7 @@
     gopls
     nodejs
     pnpm
+    python3
     uv
     pyright
   ];
